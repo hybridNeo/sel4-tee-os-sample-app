@@ -23,9 +23,12 @@ int increment(int i){
 
 
 //Every ta must have a function handler.
-tee_result function_handler(int msg, int func_id ){
+tee_result function_handler(int msg, int func_id ,seL4_Word* param_arr,int length){
     if(func_id == HELLO_TA_INCREMENT ){
-        return tee_make_result(increment(msg));
+    	char *temp = (char *)param_arr;
+    	 printf("passed string parameter: %s \n",temp);
+    	 int arr[5] = {12,34,4,45,55};
+        return tee_make_result(increment(msg),arr,5*sizeof(int));
     }else{
         return tee_ta_failure();
     }
