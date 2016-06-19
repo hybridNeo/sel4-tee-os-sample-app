@@ -5,3 +5,4 @@
  */
 
 #define HELLO_TA_INCREMENT 1
+#define HELLO_TA_ENCRYPT 2
