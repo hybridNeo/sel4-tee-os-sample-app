@@ -32,7 +32,7 @@
 			    	blockptr++;
 			   	 }
 	    	}
-	    	seL4_ReplyRecv(EP_CPTR,tag,&sender_badge);	
+	    	seL4_Reply(tag);	
 	    }else{
 	    	printf("Error! invalid reference to function\n");
 	    }	
