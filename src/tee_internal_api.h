@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <sel4/sel4.h>
+#include "util.h"
 
 /*
  * Must be overriden by the ta

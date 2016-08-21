@@ -7,11 +7,12 @@
 #include "tee_internal_api.h"
 #include "tee_crypto_api.h"
 #include "config.h"
+#include "util.h"
 #include <string.h>
 
 /* constants */
 int main(int argc, char **argv) {
-	printf("ta: TA has started.\n");
+	sel4_print("ta: TA has started.\n");
 	init();
 	
 	return 0;

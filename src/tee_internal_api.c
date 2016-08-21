@@ -19,7 +19,14 @@
 			int temp = seL4_GetMR(i+3);
 			param_arr[i] = temp;
 		}
-		printf("ta: got message:= %#d from tee-container, function id = %d  \n",msg,func_id);
+		//printf("ta: got message:= %#d from tee-container, function id = %d  \n",msg,func_id);
+		sel4_print("ta: got message:= ");
+		char num[3];
+		itoa(msg,num);
+		sel4_print(num);
+		sel4_print(" from tee-container, function id = ");
+		seL4_DebugPutChar('0'+ func_id);
+		sel4_print(" \n");
 		tee_result result = function_handler(msg,func_id,param_arr,length);
 		if(result.status){
 			int length = result.size/(double)sizeof(seL4_Word);
@@ -34,7 +41,7 @@
 			}
 			seL4_Reply(tag);	
 		}else{
-			printf("Error! invalid reference to function\n");
+			sel4_print("Error! invalid reference to function\n");
 		}	
  	}
 	
