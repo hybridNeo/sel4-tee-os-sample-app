@@ -17,6 +17,7 @@
 		seL4_Word param_arr[length];
 		for(int i = 0 ; i < length; ++i){
 			int temp = seL4_GetMR(i+3);
+			
 			param_arr[i] = temp;
 		}
 		//printf("ta: got message:= %#d from tee-container, function id = %d  \n",msg,func_id);
